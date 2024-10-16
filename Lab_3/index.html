@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Транзакции</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        #totalAmount {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        #info {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Транзакции</h1>
+
+    <form id="transactionForm">
+        <label for="amount">Сумма:</label><br>
+        <input type="number" id="amount" name="amount"><br>
+        <label for="category">Категория:</label><br>
+        <select id="category" name="category">
+            <option value="food">Еда</option>
+            <option value="clothes">Одежда</option>
+            <option value="cars">Транспорт</option>
+        </select><br>
+        <label for="description">Описание:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+        <button type="button" id="addTransactionBtn">Добавить транзакцию</button>
+    </form>
+
+    <table id="transactionsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Сумма</th>
+                <th>Дата и Время</th>
+                <th>Категория транзакции</th>
+                <th>Краткое описание транзакции</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Транзакции будут добавляться сюда -->
+        </tbody>
+    </table>
+
+    <div id="totalAmount">Общая сумма: 0</div>
+
+    <p id="info"></p>
+
+    <script type="module" src="script/script.js"></script>
+</body>
+</html>
